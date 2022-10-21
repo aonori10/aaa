@@ -1,0 +1,109 @@
+body {
+width: 800px;
+margin:0 auto;
+min-height: 110vh;
+display: grid;
+grid-template: 
+"header header header header header"100px
+"left   center center center center"200px
+".....  .....  .....  ..... ....."     10px
+"under  under  .....  under-2 under-2 "200px
+".....  .....  .....  ..... ....."     20px
+"footer footer footer footer  footer"100px
+/auto   200px  50px   200px   auto;
+background-color: aquamarine;
+animation: change-color-anim 30s linear infinite;
+}
+
+@keyframes change-color-anim {
+    0%{background: whitesmoke;}
+    20% { background: palevioletred; }
+    40%{ background: palegreen;}
+    60% { background: rgb(212, 204, 217); }
+    80%{background:pink ;}
+    100% { background: white; }
+}
+
+ul { 
+list-style: none;
+}
+
+h2{
+  text-align: center;
+}
+
+header{
+    outline: 1px solid black;
+    grid-area: header;
+    background-color: aliceblue;
+}
+header p,h1{
+    float: left;
+    padding-left: 100px;
+}
+
+main{
+   outline: 1px solid black;
+   grid-area: center;
+   background-color: aliceblue;
+}
+
+nav{
+    outline: 1px solid black;
+    grid-area: left;
+    background-color: aliceblue;
+
+}
+
+.under-left{
+    outline: 1px solid white;
+    grid-area: under;
+    display:flex;
+    overflow-x:scroll;
+    overflow-y: hidden;
+    height: auto;
+    width: 400px;
+}
+    
+.under-left img {    
+    width: 16em;
+    padding: 1em;
+}
+
+.under{
+    outline: 1px solid white;
+    grid-area: under-2;
+    background-color: aliceblue;
+}
+/*カレンダーcss*/
+.calendar {
+    padding: 0 30px 30px 30px;
+}
+.day :first-child {
+    color: #ff838b;
+}
+.day :last-child {
+    color: #6fb5ff;
+}
+table {
+    width: 100%;
+}
+th, td {
+    text-align: center;
+}
+
+footer{
+    outline: 1px solid black;
+    grid-area: footer;
+    background-color: aliceblue;
+}
+
+@media screen and (max-width: 700px){
+    body{
+        grid-template:
+        "header" 100px
+        "center" 1fr
+        "footer" 100px;
+    }
+}
+    
